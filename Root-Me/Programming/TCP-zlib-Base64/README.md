@@ -2,41 +2,68 @@
 
 ## Challenge
 
-This challenge requires connecting to a TCP server, decoding Base64-encoded data, decompressing it using zlib, and sending the original message back to the server within a limited time.
+This challenge requires connecting to a TCP server and processing messages that are encoded with Base64 and compressed using zlib. The objective is to recover the original message and send it back to the server within a limited time.
 
 ## Objective
 
-The goal is to recover the original message from a Base64-encoded and zlib-compressed string and automatically send the correct response to the server.
+Automate the entire process using Python by:
+
+1. Connecting to the TCP server.
+2. Receiving the encoded message.
+3. Decoding the Base64 data.
+4. Decompressing the zlib-compressed content.
+5. Sending the original message back to the server.
+6. Repeating the process until the challenge is completed.
 
 ## Concepts Learned
 
 - TCP sockets
+- Network communication
 - Python socket programming
 - Base64 decoding
 - zlib decompression
+- Automation
 - String manipulation
-- Loops and automation
 - Error handling
-- Time-constrained communication
 
-## Approach
+## Technologies Used
 
-1. Connect to the Root-Me TCP server.
-2. Receive the server response.
-3. Extract the encoded string from the message.
-4. Decode the string using Base64.
-5. Decompress the resulting data using zlib.
-6. Send the original message back to the server.
-7. Repeat the process until the challenge is completed.
-8. Detect the final success message and stop the script.
+- Python 3
+- socket
+- base64
+- zlib
 
-## Tools
+## Python Libraries
 
-- Python
-- `socket`
-- `base64`
-- `zlib`
+### socket
+Used to establish a TCP connection and communicate with the remote server.
 
-## Result
+### base64
+Used to decode Base64-encoded data received from the server.
 
-The challenge was successfully completed by automating the complete decoding and response process with Python.
+### zlib
+Used to decompress the decoded data and recover the original message.
+
+
+## Workflow
+
+```text
+TCP Server
+    |
+    v
+Receive encoded data
+    |
+    v
+Base64 decode
+    |
+    v
+zlib decompress
+    |
+    v
+Recover original message
+    |
+    v
+Send response
+    |
+    v
+Repeat until challenge completion
